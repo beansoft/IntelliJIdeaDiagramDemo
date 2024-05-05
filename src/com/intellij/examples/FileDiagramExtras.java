@@ -64,13 +64,28 @@ public class FileDiagramExtras extends DiagramExtras<VirtualFile> {
     }
   };
 
-  @NotNull
+  // Below for old version IDEAs
+  // @NotNull
+  // @Override
+  // public JComponent createNodeComponent(DiagramNode<VirtualFile> node, DiagramBuilder builder, Point basePoint) {
+  //   if (node.getIdentifyingElement().getParent() == null) {
+  //     return new JLabel(IconLoader.getIcon("/icons/hdd.png"));
+  //   }
+  //   return super.createNodeComponent(node, builder, basePoint);
+  // }
+
+  // Fix API issues under IDEA 2023.3.6+
   @Override
-  public JComponent createNodeComponent(DiagramNode<VirtualFile> node, DiagramBuilder builder, Point basePoint) {
+  public @NotNull JComponent createNodeComponent(
+          @NotNull DiagramNode<VirtualFile> node,
+          @NotNull DiagramBuilder builder,
+          @NotNull Point basePoint,
+          @NotNull JPanel wrapper
+  ) {
     if (node.getIdentifyingElement().getParent() == null) {
       return new JLabel(IconLoader.getIcon("/icons/hdd.png"));
     }
-    return super.createNodeComponent(node, builder, basePoint);
+    return super.createNodeComponent(node, builder, basePoint, wrapper);
   }
 
   @Nullable

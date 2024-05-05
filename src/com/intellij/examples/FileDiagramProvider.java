@@ -73,6 +73,11 @@ public class FileDiagramProvider extends BaseDiagramProvider<VirtualFile> {
   }
 
   public static FileDiagramProvider getInstance() {
-    return (FileDiagramProvider)DiagramProvider.findByID(ID);
+    // Fix API issues under IDEA 2023.3.6+
+    final DiagramProvider<VirtualFile> provider = DiagramProvider.findByID(ID);
+    return (FileDiagramProvider)provider;
+
+    // Below for old version IDEAs
+    // return (FileDiagramProvider)DiagramProvider.findByID(ID);
   }
 }

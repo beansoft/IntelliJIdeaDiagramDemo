@@ -14,7 +14,7 @@
   ~ limitations under the License.
   -->
 
-<idea-plugin version="2">
+<idea-plugin>
   <id>com.intellij.example.diagram</id>
   <name>IntelliJ Diagramming framework demo</name>
   <version>1.0</version>

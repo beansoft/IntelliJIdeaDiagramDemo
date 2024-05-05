@@ -1,6 +1,8 @@
 Demo Diagram Plugin for IntelliJ IDEA
 =======================
 
+[ 中文介绍]( README_CN.md)
+
 The plugin shows how to use the internal diagram framework available for IntelliJ IDEA Ultimate.
 
 Before you start playing with the project do the following:
